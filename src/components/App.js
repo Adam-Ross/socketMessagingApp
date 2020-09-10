@@ -1,13 +1,13 @@
-import React, { useState, Fragment } from "react";
+import React, { Fragment } from "react";
 import Login from "./Login";
-
+import useLocalStorage from "./hooks/useLocalStorage";
+import DashBoard from "./DashBoard";
 function App() {
-  const [id, setId] = useState();
+  const [id, setId] = useLocalStorage("id");
 
   return (
     <Fragment>
-      {id}
-      <Login onIdSubmit={setId} />
+      {id ? <DashBoard id={id} /> : <Login onIdSubmit={setId} />}
     </Fragment>
   );
 }
