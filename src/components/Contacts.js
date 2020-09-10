@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { ListGroup } from "react-bootstrap";
 import { useContacts } from "../contexts/ContactsProvider";
 const Contacts = () => {
