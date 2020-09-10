@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState, Fragment } from "react";
 import Login from "./Login";
 
 function App() {
+  const [id, setId] = useState();
+
   return (
-    <div className="App">
-      <Login />
-    </div>
+    <Fragment>
+      {id}
+      <Login onIdSubmit={setId} />
+    </Fragment>
   );
 }
 
