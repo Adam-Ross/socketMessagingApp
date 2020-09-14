@@ -18,11 +18,14 @@ const NewConversationModal = ({ closeModal }) => {
 
   const handleCheckboxChange = (contactId) => {
     setSelectedContactIds((prevSelectedContactIds) => {
+      // Check to see if selected contact is in the selectedContactIds
       if (selectedContactIds.includes(contactId)) {
+        // If selectedContactIds contains selected contact id, remove it.
         return prevSelectedContactIds.filter((prevId) => {
           return contactId !== prevId;
         });
       } else {
+        // Put checked contact into selectedContactIds if not found.
         return [...prevSelectedContactIds, contactId];
       }
     });
